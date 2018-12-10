@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import employees from './employees';
 import PayrollProvider from './components/Payroll';
 import ToggleCurrency from './components/ToggleCurrency';
+import SearchComponent from './components/Search';
 
 const locale = {
   MXM: 'MXM',
@@ -27,6 +28,7 @@ class App extends Component {
       <div id='employees'>
         <PayrollProvider {...this.state}>
           <h1>Table</h1>
+          <SearchComponent/>
           <ToggleCurrency/>
         </PayrollProvider>
       </div>
