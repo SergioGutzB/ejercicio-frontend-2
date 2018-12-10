@@ -8,6 +8,13 @@
         "ecmascript": 6,
         "jsx": true
     },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
     "plugins": [
         "react"
     ],
@@ -18,4 +25,4 @@
         "camelcase": 0,
         "no-underscore-dangle": 0
     }
-
+}
