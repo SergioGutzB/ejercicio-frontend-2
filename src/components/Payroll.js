@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 const PayrollContext = React.createContext()
-
 export { PayrollContext }
 
 class PayrollProvider extends Component {

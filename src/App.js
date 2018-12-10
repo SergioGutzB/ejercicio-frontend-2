@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import employees from './employees';
 import PayrollProvider from './components/Payroll';
+import ToggleCurrency from './components/ToggleCurrency';
 
 const locale = {
   MXM: 'MXM',
@@ -21,10 +22,12 @@ class App extends Component {
   }
 
   render() {
+    console.log('update last version state: ', this.state);
     return (
       <div id='employees'>
         <PayrollProvider {...this.state}>
           <h1>Table</h1>
+          <ToggleCurrency/>
         </PayrollProvider>
       </div>
     );
