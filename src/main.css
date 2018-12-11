@@ -382,7 +382,18 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
 
+#employees {
+  padding: 30px 50px 0px; }
+
 /* Código de la tabla aquí */
+.container-input {
+  position: relative; }
+  .container-input .suffix-icon {
+    position: absolute;
+    right: 25px;
+    top: 8px;
+    color: #cacaca; }
+
 .input--search {
   line-height: 35px;
   border-radius: 5px;
@@ -469,5 +480,8 @@ body {
 .salary {
   font-family: monospace;
   text-align: right; }
+
+.phone, .age, .email {
+  text-align: center; }
 
 /*# sourceMappingURL=main.css.map */

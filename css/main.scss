@@ -15,6 +15,10 @@ body {
   }
 }
 
+#employees {
+  padding: 30px 50px 0px;
+}
+
 /* Código de la tabla aquí */
 
 $gray-color: #f4f4f4;
@@ -22,6 +26,15 @@ $hover-color: #d8e6d7a3;
 $border-color: #dee2e6;
 $error-color: #ff3637b0;
 
+.container-input {
+  position:relative;
+  .suffix-icon {
+    position: absolute;
+    right: 25px;
+    top: 8px;
+    color: #cacaca;
+  }
+}
 .input {
   &--search {
     line-height: 35px;
@@ -142,4 +155,7 @@ $error-color: #ff3637b0;
 .salary {
   font-family: monospace;
   text-align: right;
+}
+.phone, .age, .email {
+  text-align: center;
 }
