@@ -54,6 +54,10 @@ $error-color: #ff3637b0;
   border: none;
   border-radius: 5px;
   margin: 20px 20px 20px 0px;
+  &[disabled] {
+    background-color: $gray-color;
+    color: #c7c7c7;
+  }
 
   &--add {
     background-color: #355c84;

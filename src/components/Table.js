@@ -51,16 +51,15 @@ export default class TableComponent extends Component {
     return (
       <PayrollContext.Consumer>
         {(ctx) => {
+          const {adding, editabled} = this.state;
           return (
             <div >
               <div className="table">
                 <TableRowHeader {...ctx.columns}/>
-                {Object.keys(ctx.dataSource).map(key => <TableRow key={key} {...ctx.dataSource[key]} editabled={this.state.editabled}/>) }
+                {Object.keys(ctx.dataSource).map(key => <TableRow key={key} {...ctx.dataSource[key]} editabled={editabled}/>) }
               </div>
-              <button className="button button--add" onClick={(e) => this.handleAdd(e, ctx )}>{!this.state.adding? 'Añadir Nuevo' : 'Guardar'}</button>
-              { !this.state.adding ?
-              <button className="button button--edit" onClick={(e) => this.handleEdit(e, () => console.log('callback edit'))}>{!this.state.editabled ? 'Editar' : 'Guardar'}</button>
-                  : null}
+              <button className="button button--add" onClick={(e) => this.handleAdd(e, ctx )} disabled={editabled && (editabled && adding === false )}>{!adding? 'Añadir Nuevo' : 'Guardar'}</button>
+              <button className="button button--edit" onClick={(e) => this.handleEdit(e, () => console.log('callback edit'))} disabled={adding}>{!editabled ? 'Editar' : 'Guardar'}</button>
             </div>
           );
         }}
