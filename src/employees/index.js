@@ -3,7 +3,7 @@ let employees = [
     id: 0,
     name: 'Eduardo González',
     company: 'América Móvil',
-    salary: 5400,
+    salary: 540,
     age: 57,
     phone: '(886) 271 4211',
     email: 'eduardo@gmail.com'
@@ -30,7 +30,7 @@ let employees = [
     id: 3,
     name: 'Alejandro Fernández',
     company: 'Grupo México',
-    salary: 17700,
+    salary: 999.99,
     age: 41,
     phone: '(542) 591 3978',
     email: 'alejandro@gmail.com'

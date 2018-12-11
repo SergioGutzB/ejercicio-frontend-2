@@ -8,10 +8,11 @@ export default class TableInputComponent extends Component {
     return (
       <PayrollContext.Consumer>
         { (ctx) => {
+
           return (
             <input
               id={ this.props.id }
-              className={`row-input ${this.props.className}`}
+              className={`table__row__input ${this.props.className}`}
               value={ this.props.value }
               placeholder={ this.props.placeholder }
               type={ this.props.type? this.props.type : 'text' }

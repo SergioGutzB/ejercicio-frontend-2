@@ -38,9 +38,9 @@ export default class TableRow extends Component {
 
   render() {
     const keys = Object.keys(this.props);
-    console.log('row props: ', this.props)
+    // console.log('row props: ', this.props)
     return (
-      <div className={`table__row ${this.props.salary <= 1000 ? 'error' : ''}`} >
+      <div className={`table__row ${this.props.salary < 1000 ? 'table__row--error' : ''}`} >
         {
           keys.map( (key, index) => {
             if (key !== 'id') {

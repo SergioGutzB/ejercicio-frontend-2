@@ -1,4 +1,4 @@
-@import 'normalize';
+@import "normalize";
 
 body {
   font-family: 'Rubik', sans-serif;
@@ -21,27 +21,36 @@ body {
   &__row {
     width: 100%;
     display: flex;
-    flex-direction:  row;
+    flex-direction: row;
     justify-content: space-between;
+    padding: 4px 0px;
+
     &:nth-child(2n) {
-      background-color: rgba(0,0,0,.1);
+      background-color: rgba(0, 0, 0, 0.1);
     }
+
     &:hover {
       cursor: pointer;
-        background-color: rgba(0,0,0,.2);
-      }
-    &--error {
-      background-color: red;
+      background-color: rgba(0, 0, 0, 0.2);
     }
 
-  }
+    &--error, &--error:nth-child(2n), &--error:hover {
+      background-color: rgba(255, 0, 0, 0.4);
+    }
 
-  &__input {
-
+    &__input {
+      width: calc(100% - 14px);
+      margin: 0 2px;
+      padding: 0px 4px;
+      border: none;
+      border: none;
+      font-size: 14px;
+      background-color: transparent;
+    }
   }
 }
 
-//styles to custom columns 
+//styles to custom columns
 .salary {
   font-family: monospace;
   text-align: right;
