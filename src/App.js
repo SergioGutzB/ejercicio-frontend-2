@@ -26,8 +26,7 @@ class App extends Component {
     },
     handleSaveDataSource: () => {
       let employees = [...this.state.employees];
-      this.state.dataSource.map((dt) => {
-        // if it's a new employee  and validated filed of employee object
+      this.state.dataSource.map(dt => {
         if (dt.id === undefined && dt.name && dt.company && dt.salary && dt.age) {
           employees = [...employees, {...dt, id: employees.length + 1}];
         } else {

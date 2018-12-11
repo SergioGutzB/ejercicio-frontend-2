@@ -1,5 +1,5 @@
-import React, { Component}  from 'react';
-import TableInputComponent from './TableInput';
+import React from 'react';
+import { TableInput } from './TableInput';
 
 const setupInputProps = (key, props) => {
   const values = {
@@ -42,7 +42,7 @@ export const TableRow = (props) => {
       Object.keys(props).map( (key, index) => {
         if (key !== 'id' && key !== 'editabled') {
           return (
-            <TableInputComponent {...setupInputProps(key, props)} key={index}/>
+            <TableInput {...setupInputProps(key, props)} key={index}/>
           );
         }
       })
