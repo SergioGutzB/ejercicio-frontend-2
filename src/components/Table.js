@@ -53,15 +53,15 @@ export default class TableComponent extends Component {
         {(ctx) => {
           return (
             <div >
-              <button onClick={(e) => this.handleAdd(e, ctx )}>{!this.state.adding? 'Añadir Nuevo' : 'Guardar'}</button>
               <div className="table">
                 <TableRowHeader {...ctx.columns}/>
                 {Object.keys(ctx.dataSource).map(key => <TableRow key={key} {...ctx.dataSource[key]} editabled={this.state.editabled}/>) }
               </div>
+              <button className="button button--add" onClick={(e) => this.handleAdd(e, ctx )}>{!this.state.adding? 'Añadir Nuevo' : 'Guardar'}</button>
               { !this.state.adding ?
-              <button onClick={(e) => this.handleEdit(e, () => console.log('callback edit'))}>{!this.state.editabled ? 'Editar' : 'Guardar'}</button>
+              <button className="button button--edit" onClick={(e) => this.handleEdit(e, () => console.log('callback edit'))}>{!this.state.editabled ? 'Editar' : 'Guardar'}</button>
                   : null}
-                </div>
+            </div>
           );
         }}
       </PayrollContext.Consumer>

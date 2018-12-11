@@ -26,7 +26,7 @@ export default class SearchComponent extends Component {
       <PayrollContext.Consumer>
         {(ctx) => {
           return (
-            <input onChange={(e) => this.handleChange(e, ctx)} />
+            <input className="input input--search" onChange={(e) => this.handleChange(e, ctx)} />
           )
         }}
       </PayrollContext.Consumer>

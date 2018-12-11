@@ -46,8 +46,10 @@ class App extends Component {
     return (
       <div id='employees'>
         <PayrollProvider {...this.state}>
-          <SearchComponent/>
-          <ToggleCurrency/>
+          <div class="filter-currency">
+            <SearchComponent/>
+            <ToggleCurrency/>
+          </div>
           <Table>Table</Table>
         </PayrollProvider>
       </div>
