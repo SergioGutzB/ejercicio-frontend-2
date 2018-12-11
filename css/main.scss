@@ -43,9 +43,29 @@ body {
       margin: 0 2px;
       padding: 0px 4px;
       border: none;
-      border: none;
       font-size: 14px;
-      background-color: transparent;
+      background-color: rgba(0, 255, 255, 0.08);
+      border: 1px solid rgba(0, 255, 255, 0.2);
+      &[disabled] {
+        background-color: rgba(0, 0, 0, 0.05);
+        border-color: transparent;
+      }
+    }
+
+    &__text {
+      width: calc(100% - 14px);
+      margin: 0px 2px;
+      display: inline-block;
+      padding: 1px 5px;
+      font-family: Arial;
+      font-size: 14px;
+      text-align: start;
+      letter-spacing: normal;
+      word-spacing: normal;
+      text-transform: none;
+      text-indent: 0px;
+      text-shadow: none;
+      line-height: 1.2;
     }
   }
 }

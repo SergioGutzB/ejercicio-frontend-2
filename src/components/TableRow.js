@@ -10,6 +10,7 @@ export default class TableRow extends Component {
       value: this.props[key],
       type: 'text',
       disabled: false,
+      editabled: this.props.editabled
     };
 
     switch (key) {
@@ -43,7 +44,7 @@ export default class TableRow extends Component {
       <div className={`table__row ${this.props.salary < 1000 ? 'table__row--error' : ''}`} >
         {
           keys.map( (key, index) => {
-            if (key !== 'id') {
+            if (key !== 'id' && key !== 'editabled') {
               return (
                 <TableInputComponent {...this.setupInputProps(key)} key={index}/>
               );
