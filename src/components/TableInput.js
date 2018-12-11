@@ -18,11 +18,12 @@ export const TableInput = (props) => {
   return (
     <PayrollContext.Consumer>
       { (ctx) => {
+        const classError = ((props.name === 'salary') && props.value < 1000) ? props.className + ' table__row__input--error' : props.className;
         if (props.editabled) {
           return (
             <input
               id={ props.id }
-              className={`table__row__input ${props.className}`}
+              className={`table__row__input ${classError}` }
               value={ props.value }
               placeholder={ props.placeholder }
               type={ props.type? props.type : 'text' }
@@ -42,7 +43,7 @@ export const TableInput = (props) => {
           )
         } else {
           return (
-            <p className={`table__row__text ${props.className}`}>{ props.name === 'salary' ? '$ ' + formatCurrency(props.value, ctx.currency, ctx.mxm) : props.value}</p>
+            <p className={`table__row__text ${classError}`}>{ props.name === 'salary' ? '$ ' + formatCurrency(props.value, ctx.currency, ctx.mxm) : props.value}</p>
           )
         }
       }

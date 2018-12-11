@@ -37,7 +37,7 @@ const setupInputProps = (key, props) => {
 }
 
 export const TableRow = (props) => {
-  return <div className={`table__row ${props.salary < 1000 ? 'table__row--error' : ''}`} >
+  return <div className="table__row">
     {
       Object.keys(props).map( (key, index) => {
         if (key !== 'id' && key !== 'editabled') {

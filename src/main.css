@@ -388,30 +388,32 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 4px 0px; }
+  padding: 0px; }
   .table__row:nth-child(2n) {
-    background-color: rgba(0, 0, 0, 0.1); }
+    background-color: #f4f4f4; }
   .table__row:hover {
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.2); }
-  .table__row--error, .table__row--error:nth-child(2n), .table__row--error:hover {
-    background-color: rgba(255, 0, 0, 0.4); }
-  .table__row__input {
+    background-color: #d8e6d7a3; }
+  .table__row__input, .table__row__text {
     width: calc(100% - 14px);
-    margin: 0 2px;
-    padding: 0px 4px;
+    margin: 0px;
+    line-height: 2; }
+    .table__row__input--error, .table__row__text--error {
+      color: #ff3637b0;
+      font-weight: 600; }
+  .table__row__input {
+    padding: 4px 5px;
     border: none;
     font-size: 14px;
-    background-color: rgba(0, 255, 255, 0.08);
-    border: 1px solid rgba(0, 255, 255, 0.2); }
+    background-color: transparent;
+    border-top: 1px solid #adc5fd;
+    border-right: 1px solid #adc5fd; }
     .table__row__input[disabled] {
-      background-color: rgba(0, 0, 0, 0.05);
-      border-color: transparent; }
+      color: #c7c7c7;
+      background-color: transparent; }
   .table__row__text {
-    width: calc(100% - 14px);
-    margin: 0px 2px;
     display: inline-block;
-    padding: 1px 5px;
+    padding: 4px 5px;
     font-family: Arial;
     font-size: 14px;
     text-align: start;
@@ -420,7 +422,8 @@ body {
     text-transform: none;
     text-indent: 0px;
     text-shadow: none;
-    line-height: 1.2; }
+    border-right: 1px solid #dee2e6;
+    border-top: 1px solid #dee2e6; }
 
 .salary {
   font-family: monospace;

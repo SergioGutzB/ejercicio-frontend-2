@@ -17,46 +17,55 @@ body {
 
 /* Código de la tabla aquí */
 
+$gray-color: #f4f4f4;
+$hover-color: #d8e6d7a3;
+$border-color: #dee2e6;
+$error-color: #ff3637b0;
+
 .table {
   &__row {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 4px 0px;
+    padding: 0px;
 
     &:nth-child(2n) {
-      background-color: rgba(0, 0, 0, 0.1);
+      background-color: $gray-color;
     }
 
     &:hover {
       cursor: pointer;
-      background-color: rgba(0, 0, 0, 0.2);
+      background-color: $hover-color;
     }
 
-    &--error, &--error:nth-child(2n), &--error:hover {
-      background-color: rgba(255, 0, 0, 0.4);
+
+    &__input, &__text {
+      width: calc(100% - 14px);
+      margin: 0px;
+      line-height: 2;
+      &--error {
+        color: $error-color;
+        font-weight: 600;
+      }
     }
 
     &__input {
-      width: calc(100% - 14px);
-      margin: 0 2px;
-      padding: 0px 4px;
+      padding: 4px 5px;
       border: none;
       font-size: 14px;
-      background-color: rgba(0, 255, 255, 0.08);
-      border: 1px solid rgba(0, 255, 255, 0.2);
+      background-color: transparent;
+      border-top: 1px solid #adc5fd;
+      border-right: 1px solid #adc5fd;
       &[disabled] {
-        background-color: rgba(0, 0, 0, 0.05);
-        border-color: transparent;
+        color: #c7c7c7;
+        background-color: transparent;
       }
     }
 
     &__text {
-      width: calc(100% - 14px);
-      margin: 0px 2px;
       display: inline-block;
-      padding: 1px 5px;
+      padding: 4px 5px;
       font-family: Arial;
       font-size: 14px;
       text-align: start;
@@ -65,7 +74,8 @@ body {
       text-transform: none;
       text-indent: 0px;
       text-shadow: none;
-      line-height: 1.2;
+      border-right: 1px solid $border-color;
+      border-top: 1px solid $border-color;
     }
   }
 }
