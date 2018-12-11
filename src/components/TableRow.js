@@ -1,57 +1,51 @@
-import React, { Component } from 'react'
+import React, { Component}  from 'react';
 import TableInputComponent from './TableInput';
 
-export default class TableRow extends Component {
+const setupInputProps = (key, props) => {
+  const values = {
+    id: key + props.id,
+    employeeId: props.id,
+    name: key,
+    value: props[key],
+    type: 'text',
+    disabled: false,
+    editabled: props.editabled
+  };
 
-  setupInputProps = (key) => {
-    const values = {
-      id: key + this.props.id,
-       employeeId: this.props.id,
-      name: key,
-      value: this.props[key],
-      type: 'text',
-      disabled: false,
-      editabled: this.props.editabled
-    };
+  switch (key) {
+    case 'name':
+      return { ...values, placeholder: 'Nombre', className: 'name' }
 
-    switch (key) {
-      case 'name':
-        return { ...values, placeholder: 'Nombre', className: 'name' }
+    case 'company':
+      return { ...values, placeholder: 'Empresa', disabled: props.id !== undefined && true? true : false, className: 'company' }
 
-      case 'company':
-        return { ...values, placeholder: 'Empresa', disabled: this.props.id !== undefined && true? true : false, className: 'company' }
+    case 'salary':
+      return { ...values, type: 'number', placeholder: 'Salario', className: 'salary' }
 
-      case 'salary':
-        return { ...values, type: 'number', placeholder: 'Salario', className: 'salary' }
+    case 'age':
+      return { ...values, type: 'number', placeholder: 'Edad', className: 'age' }
 
-      case 'age':
-        return { ...values, type: 'number', placeholder: 'Edad', className: 'age' }
+    case 'phone':
+      return { ...values, placeholder: 'Teléfono', className: 'phone' }
 
-      case 'phone':
-        return { ...values, placeholder: 'Teléfono', className: 'phone' }
+    case 'email':
+      return { ...values, placeholder: 'E-mail', className: 'email' }
 
-      case 'email':
-        return { ...values, placeholder: 'E-mail', className: 'email' }
-
-      default:
-        return {...values};
-    }
+    default:
+      return {...values};
   }
+}
 
-  render() {
-    const keys = Object.keys(this.props);
-    return (
-      <div className={`table__row ${this.props.salary < 1000 ? 'table__row--error' : ''}`} >
-        {
-          keys.map( (key, index) => {
-            if (key !== 'id' && key !== 'editabled') {
-              return (
-                <TableInputComponent {...this.setupInputProps(key)} key={index}/>
-              );
-            }
-          })
+export const TableRow = (props) => {
+  return <div className={`table__row ${props.salary < 1000 ? 'table__row--error' : ''}`} >
+    {
+      Object.keys(props).map( (key, index) => {
+        if (key !== 'id' && key !== 'editabled') {
+          return (
+            <TableInputComponent {...setupInputProps(key, props)} key={index}/>
+          );
         }
-      </div>
-    );
-  }
+      })
+    }
+  </div>
 }

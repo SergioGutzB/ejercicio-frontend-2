@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TableRow from './TableRow';
+import { TableRow } from './TableRow';
 import { PayrollContext } from './Payroll';
 
 export default class TableComponent extends Component {
