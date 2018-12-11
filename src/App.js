@@ -24,28 +24,25 @@ class App extends Component {
     handleUpdateDataSource: (dataSource) => {
       this.setState({dataSource});
     },
-    //handleSaveDataSource: () => {
-      //let employees = [...this.state.employees];
-      //console.log('enployees: ', this.state.employees);
-      //this.state.dataSource.map((dt) => {
-        //// if it's a new employee  and validated filed of employee object
-        //if (dt.id === undefined && dt.name && dt.company && dt.salary && dt.age) {
-          //employees = [...employees, {...dt, id: employees.length + 1}];
-        //} else {
-          //this.state.employees.map((employee) => {
-            //if (employee.id === dt.id) {
-              //employees[employee.id] = {...employee, ...dt};
-            //}
-          //})
-        //}
-      //});
-      //console.log(employees);
-      //this.setState({employees, dataSource: employees});
-    //}
+    handleSaveDataSource: () => {
+      let employees = [...this.state.employees];
+      this.state.dataSource.map((dt) => {
+        // if it's a new employee  and validated filed of employee object
+        if (dt.id === undefined && dt.name && dt.company && dt.salary && dt.age) {
+          employees = [...employees, {...dt, id: employees.length + 1}];
+        } else {
+          this.state.employees.map((employee) => {
+            if (employee.id === dt.id) {
+              employees[employee.id] = {...employee, ...dt};
+            }
+          })
+        }
+      });
+      this.setState({employees, dataSource: employees});
+    }
   }
 
   render() {
-    console.log('update last version state: ', this.state);
     return (
       <div id='employees'>
         <PayrollProvider {...this.state}>

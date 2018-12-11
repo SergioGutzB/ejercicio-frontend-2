@@ -28,7 +28,16 @@ export default class TableInputComponent extends Component {
                 value={ this.props.value }
                 placeholder={ this.props.placeholder }
                 type={ this.props.type? this.props.type : 'text' }
-                onChange={ (e) => {console.log(e.target.value)}}
+                onChange={ (e) => {
+                  const key = e.target.name;
+                  const employees = ctx.dataSource.map((employee) => {
+                    if (employee.id === this.props.employeeId) {
+                      employee[key] = ['salary', 'age'].includes(key) ? parseFloat(e.target.value) : e.target.value;
+                    }
+                    return employee;
+                  })
+                  ctx.handleUpdateDataSource(employees);
+                }}
                 name={ this.props.name }
                 disabled={ this.props.disabled }
               />
@@ -46,7 +55,8 @@ export default class TableInputComponent extends Component {
 }
 
 TableInputComponent.propTypes = {
-  id: PropTypes.PropTypes.number.isRequired,
+  employeeId: PropTypes.number,
+  id: PropTypes.PropTypes.string.isRequired,
   value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number

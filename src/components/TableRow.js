@@ -6,6 +6,7 @@ export default class TableRow extends Component {
   setupInputProps = (key) => {
     const values = {
       id: key + this.props.id,
+       employeeId: this.props.id,
       name: key,
       value: this.props[key],
       type: 'text',
@@ -18,7 +19,7 @@ export default class TableRow extends Component {
         return { ...values, placeholder: 'Nombre', className: 'name' }
 
       case 'company':
-        return { ...values, placeholder: 'Empresa', disabled: true, className: 'company' }
+        return { ...values, placeholder: 'Empresa', disabled: this.props.id !== undefined && true? true : false, className: 'company' }
 
       case 'salary':
         return { ...values, type: 'number', placeholder: 'Salario', className: 'salary' }
@@ -39,7 +40,6 @@ export default class TableRow extends Component {
 
   render() {
     const keys = Object.keys(this.props);
-    // console.log('row props: ', this.props)
     return (
       <div className={`table__row ${this.props.salary < 1000 ? 'table__row--error' : ''}`} >
         {
