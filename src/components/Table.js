@@ -2,6 +2,15 @@ import React, { Component } from 'react'
 import { TableRow } from './TableRow';
 import { PayrollContext } from './Payroll';
 
+const TableRowHeader = (props) => {
+  console.log('props.column: ', props);
+  return (
+    <div className="table__row table__row--header">
+      {Object.keys(props).map(column => <p key={column} className="table__row__text">{props[column]}</p> )}
+    </div>
+  )
+}
+
 export default class TableComponent extends Component {
 
   state = {
@@ -45,7 +54,10 @@ export default class TableComponent extends Component {
           return (
             <div >
               <button onClick={(e) => this.handleAdd(e, ctx )}>{!this.state.adding? 'Añadir Nuevo' : 'Guardar'}</button>
-              {Object.keys(ctx.dataSource).map(key => <TableRow key={key} {...ctx.dataSource[key]} editabled={this.state.editabled} ></TableRow>) }
+              <div className="table">
+                <TableRowHeader {...ctx.columns}/>
+                {Object.keys(ctx.dataSource).map(key => <TableRow key={key} {...ctx.dataSource[key]} editabled={this.state.editabled}/>) }
+              </div>
               { !this.state.adding ?
               <button onClick={(e) => this.handleEdit(e, () => console.log('callback edit'))}>{!this.state.editabled ? 'Editar' : 'Guardar'}</button>
                   : null}

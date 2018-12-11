@@ -23,6 +23,8 @@ $border-color: #dee2e6;
 $error-color: #ff3637b0;
 
 .table {
+  border-bottom: 1px solid $border-color;
+  border-left: 1px solid $border-color;
   &__row {
     width: 100%;
     display: flex;
@@ -39,6 +41,16 @@ $error-color: #ff3637b0;
       background-color: $hover-color;
     }
 
+    &--header {
+      &:hover {
+        cursor: initial;
+        background-color: transparent;
+      }
+      p {
+        text-align: center;
+        font-weight: 600;
+      }
+    }
 
     &__input, &__text {
       width: calc(100% - 14px);

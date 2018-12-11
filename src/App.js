@@ -15,6 +15,7 @@ class App extends Component {
   state = {
     employees,
     dataSource: employees,
+    columns: {name: 'Nombre', company: 'Empresa', salary: 'Salario', age: 'Edad', phone: 'Teléfono', email: 'Correo'},
     currency: locale.MXM,
     mxm: 21.50,
     handleToggleCurrency: (e) => {
@@ -45,9 +46,9 @@ class App extends Component {
     return (
       <div id='employees'>
         <PayrollProvider {...this.state}>
-          <Table>Table</Table>
           <SearchComponent/>
           <ToggleCurrency/>
+          <Table>Table</Table>
         </PayrollProvider>
       </div>
     );
