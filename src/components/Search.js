@@ -27,7 +27,7 @@ export default class SearchComponent extends Component {
         {(ctx) => {
           return (
             <div className="container-input">
-              <input className="input input--search" onChange={(e) => this.handleChange(e, ctx)} />
+              <input className="input input--search" onChange={(e) => this.handleChange(e, ctx)} placeholder="Buscar por nombre o empresa"/>
               <i className="material-icons suffix-icon">search</i>
             </div>
           )
