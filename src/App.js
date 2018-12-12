@@ -26,10 +26,10 @@ class App extends Component {
       this.setState({dataSource});
     },
     handleSaveDataSource: () => {
-      let employees = [...this.state.employees];
+      let employees = [];
       this.state.dataSource.map(dt => {
         if (dt.id === undefined && dt.name && dt.company && dt.salary && dt.age) {
-          employees = [...employees, {...dt, id: employees.length + 1}];
+          employees = [...this.state.employees, {...dt, id: employees.length + 1}];
         } else {
           this.state.employees.map((employee) => {
             if (employee.id === dt.id) {
