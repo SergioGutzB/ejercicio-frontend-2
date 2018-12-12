@@ -454,14 +454,8 @@ body {
       background-color: transparent; }
     .table__row--header p {
       text-align: center;
-      font-weight: 600; }
-    .table__row__input, .table__row__text {
-      width: calc(100% - 14px);
-      margin: 0px;
-      line-height: 2; }
-      .table__row__input--error, .table__row__text--error {
-        color: #ff3637b0;
-        font-weight: 600; }
+      font-weight: 600;
+      color: black; }
     .table__row__input {
       padding: 4px 5px;
       border: none;
@@ -474,7 +468,7 @@ body {
       .table__row__input[disabled] {
         color: #c7c7c7;
         background-color: transparent; }
-    .table__row__text {
+    .table__row__text, .table__row__header {
       display: inline-block;
       padding: 4px 5px;
       font-family: Arial;
@@ -486,11 +480,20 @@ body {
       text-indent: 0px;
       text-shadow: none;
       border-right: 1px solid #dee2e6;
-      border-top: 1px solid #dee2e6; }
+      border-top: 1px solid #dee2e6;
+      color: black; }
+    .table__row__input, .table__row__text, .table__row__header {
+      width: calc(100% - 14px);
+      margin: 0px;
+      line-height: 2; }
+      .table__row__input--error, .table__row__input--error.salary, .table__row__text--error, .table__row__text--error.salary, .table__row__header--error, .table__row__header--error.salary {
+        color: #ff3637b0;
+        font-weight: 600; }
 
 .salary {
   font-family: monospace;
-  text-align: right; }
+  text-align: right;
+  color: #67ad79; }
 
 .phone, .age, .email {
   text-align: center; }
