@@ -3,7 +3,6 @@ import { TableRow } from './TableRow';
 import { PayrollContext } from './Payroll';
 
 const TableRowHeader = (props) => {
-  console.log('props.column: ', props);
   return (
     <div className="table__row table__row--header ">
       {Object.keys(props).map(column => <p key={column} className={`table__row__text ${column}`}>{props[column]}</p> )}
@@ -56,7 +55,7 @@ export default class TableComponent extends Component {
             <div >
               <div className="table">
                 <TableRowHeader {...ctx.columns}/>
-                {Object.keys(ctx.dataSource).map(key => <TableRow key={key} {...ctx.dataSource[key]} editabled={editabled}/>) }
+                {Object.keys(ctx.dataSource).map(key => <TableRow key={key} {...ctx.dataSource[key]} editabled={editabled} handleDelete={ctx.handleDeleteEmployee}/>) }
               </div>
               <button className="button button--add" onClick={(e) => this.handleAdd(e, ctx )} disabled={editabled && (editabled && adding === false )}>{!adding? 'Añadir Nuevo' : 'Guardar'}</button>
               <button className="button button--edit" onClick={(e) => this.handleEdit(e, () => console.log('callback edit'))} disabled={adding}>{!editabled ? 'Editar' : 'Guardar'}</button>

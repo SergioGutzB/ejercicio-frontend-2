@@ -39,6 +39,13 @@ class App extends Component {
         }
       });
       this.setState({employees, dataSource: employees});
+    },
+    handleDeleteEmployee: (evt, employeeId) => {
+      const employees =  this.state.employees.filter(employee => employee.id !== employeeId);
+      this.setState({
+        employees,
+        dataSource: employees
+      });
     }
   }
 

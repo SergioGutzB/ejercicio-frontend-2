@@ -40,7 +40,7 @@ export const TableRow = (props) => {
   return <div className="table__row">
     {
       Object.keys(props).map( (key, index) => {
-        if (key !== 'id' && key !== 'editabled') {
+        if (key !== 'id' && key !== 'editabled' &&  key !== 'handleDelete') {
           return (
             <TableInput {...setupInputProps(key, props)} key={index}/>
           );
@@ -48,7 +48,7 @@ export const TableRow = (props) => {
       })
     }
     <div className="table__row__text actions">
-      <button className="button button--delete"><i className="material-icons">delete</i></button>
+      <button className="button button--delete" onClick={(e) => props.handleDelete(e, props.id)}><i className="material-icons">delete</i></button>
     </div>
   </div>
 }
