@@ -47,5 +47,8 @@ export const TableRow = (props) => {
         }
       })
     }
+    <div className="table__row__text actions">
+      <button className="button button--delete"><i className="material-icons">delete</i></button>
+    </div>
   </div>
 }

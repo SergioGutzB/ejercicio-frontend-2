@@ -15,7 +15,7 @@ class App extends Component {
   state = {
     employees,
     dataSource: employees,
-    columns: {name: 'Nombre', company: 'Empresa', salary: 'Salario', age: 'Edad', phone: 'Teléfono', email: 'Correo'},
+    columns: {name: 'Nombre', company: 'Empresa', salary: 'Salario', age: 'Edad', phone: 'Teléfono', email: 'Correo', actions: ''},
     currency: locale.MXM,
     mxm: 21.50,
     handleToggleCurrency: (e) => {

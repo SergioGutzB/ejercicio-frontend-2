@@ -409,7 +409,8 @@ body {
   color: white;
   border: none;
   border-radius: 5px;
-  margin: 20px 20px 20px 0px; }
+  margin: 20px 20px 20px 0px;
+  cursor: pointer; }
   .button[disabled] {
     background-color: #f4f4f4;
     color: #c7c7c7; }
@@ -417,6 +418,13 @@ body {
     background-color: #355c84; }
   .button--currency {
     margin: 20px 0px 20px 20px; }
+  .button--delete {
+    height: 30px;
+    margin: 0px auto;
+    padding: 0px 0px 0px;
+    background-color: transparent;
+    color: #ff3637b0;
+    text-align: center; }
 
 .filter-currency, .currency {
   width: 100%;
@@ -441,10 +449,8 @@ body {
     .table__row:nth-child(2n) {
       background-color: #f4f4f4; }
     .table__row:hover {
-      cursor: pointer;
       background-color: #d8e6d7a3; }
     .table__row--header:hover {
-      cursor: initial;
       background-color: transparent; }
     .table__row--header p {
       text-align: center;
@@ -461,8 +467,10 @@ body {
       border: none;
       font-size: 14px;
       background-color: transparent;
-      border-top: 1px solid #adc5fd;
+      border-bottom: 1px solid #adc5fd;
       border-right: 1px solid #adc5fd; }
+      .table__row__input:first-child {
+        border-left: 1px solid #adc5fd; }
       .table__row__input[disabled] {
         color: #c7c7c7;
         background-color: transparent; }
@@ -486,5 +494,14 @@ body {
 
 .phone, .age, .email {
   text-align: center; }
+
+.age {
+  min-width: 100px;
+  max-width: 100px; }
+
+.actions {
+  display: flex;
+  min-width: 80px;
+  max-width: 80px; }
 
 /*# sourceMappingURL=main.css.map */

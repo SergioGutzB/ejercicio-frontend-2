@@ -25,6 +25,7 @@ $gray-color: #f4f4f4;
 $hover-color: #d8e6d7a3;
 $border-color: #dee2e6;
 $error-color: #ff3637b0;
+$width-actions: 80px;
 
 .container-input {
   position:relative;
@@ -54,6 +55,7 @@ $error-color: #ff3637b0;
   border: none;
   border-radius: 5px;
   margin: 20px 20px 20px 0px;
+  cursor: pointer;
   &[disabled] {
     background-color: $gray-color;
     color: #c7c7c7;
@@ -65,6 +67,15 @@ $error-color: #ff3637b0;
 
   &--currency {
   margin: 20px 0px 20px 20px;
+  }
+
+  &--delete {
+    height: 30px;
+    margin: 0px auto;
+    padding: 0px 0px 0px;
+    background-color: transparent;
+    color: $error-color;
+    text-align: center;
   }
 }
 
@@ -97,13 +108,11 @@ $error-color: #ff3637b0;
     }
 
     &:hover {
-      cursor: pointer;
       background-color: $hover-color;
     }
 
     &--header {
       &:hover {
-        cursor: initial;
         background-color: transparent;
       }
 
@@ -129,8 +138,13 @@ $error-color: #ff3637b0;
       border: none;
       font-size: 14px;
       background-color: transparent;
-      border-top: 1px solid #adc5fd;
+      border-bottom: 1px solid #adc5fd;
       border-right: 1px solid #adc5fd;
+
+      &:first-child {
+        border-left: 1px solid #adc5fd;
+      }
+      
 
       &[disabled] {
         color: #c7c7c7;
@@ -162,4 +176,14 @@ $error-color: #ff3637b0;
 }
 .phone, .age, .email {
   text-align: center;
+}
+.age {
+  min-width: 100px;
+  max-width: 100px;
+}
+
+.actions {
+  display: flex;
+  min-width: $width-actions;
+  max-width: $width-actions;
 }

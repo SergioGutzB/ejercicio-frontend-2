@@ -5,8 +5,8 @@ import { PayrollContext } from './Payroll';
 const TableRowHeader = (props) => {
   console.log('props.column: ', props);
   return (
-    <div className="table__row table__row--header">
-      {Object.keys(props).map(column => <p key={column} className="table__row__text">{props[column]}</p> )}
+    <div className="table__row table__row--header ">
+      {Object.keys(props).map(column => <p key={column} className={`table__row__text ${column}`}>{props[column]}</p> )}
     </div>
   )
 }
