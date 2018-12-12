@@ -48,7 +48,8 @@ export const TableRow = (props) => {
       })
     }
     <div className="table__row__text actions">
-      <button className="button button--delete" onClick={(e) => props.handleDelete(e, props.id)}><i className="material-icons">delete</i></button>
+      { props.id !== undefined ? <button className="button button--delete" onClick={(e) => props.handleDelete(e, props.id)}><i className="material-icons">delete</i></button> : null }
     </div>
+
   </div>
 }
