@@ -21,6 +21,8 @@ body {
 
 /* Código de la tabla aquí */
 
+$green-color: #67ad79;
+$blue-color: #355c84;
 $gray-color: #f4f4f4;
 $hover-color: #d8e6d7a3;
 $border-color: #dee2e6;
@@ -50,19 +52,20 @@ $width-actions: 80px;
 
 .button {
   padding: 10px 30px;
-  background-color: #67ad79;
+  background-color: $green-color;
   color: white;
   border: none;
   border-radius: 5px;
   margin: 20px 20px 20px 0px;
   cursor: pointer;
-  &[disabled] {
-    background-color: $gray-color;
-    color: #c7c7c7;
+  transition: all 0.3s ease 0s;
+
+  &:focus {
+    outline: none;
   }
 
   &--add {
-    background-color: #355c84;
+    background-color: $blue-color;
   }
 
   &--currency {
@@ -76,6 +79,25 @@ $width-actions: 80px;
     background-color: transparent;
     color: $error-color;
     text-align: center;
+  }
+
+  &--print {
+    align-self: flex-end;
+  }
+
+  &--border {
+    border: 1px solid $green-color;
+    background-color: transparent;
+    color: $green-color;
+    &:hover {
+      background-color: $green-color;
+      color: white;
+    }
+  }
+
+  &[disabled] {
+    background-color: $gray-color;
+    color: #c7c7c7;
   }
 }
 
@@ -174,7 +196,7 @@ $width-actions: 80px;
 .salary {
   font-family: monospace;
   text-align: right;
-  color: #67ad79;
+  color: $green-color;
 }
 .phone, .age, .email {
   text-align: center;
