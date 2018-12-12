@@ -17,10 +17,7 @@ export default class TableComponent extends Component {
     adding: false
   }
 
-  handleEdit = (evt, callback) => {
-    if (this.state.editabled ) {
-      callback();
-    }
+  handleEdit = () => {
     this.setState({editabled: !this.state.editabled})
   }
 
@@ -58,7 +55,7 @@ export default class TableComponent extends Component {
                 {Object.keys(ctx.dataSource).map(key => <TableRow key={key} {...ctx.dataSource[key]} editabled={editabled} handleDelete={ctx.handleDeleteEmployee}/>) }
               </div>
               <button className="button button--add" onClick={(e) => this.handleAdd(e, ctx )} disabled={editabled && (editabled && adding === false )}>{!adding? 'Añadir Nuevo' : 'Guardar'}</button>
-              <button className="button button--edit" onClick={(e) => this.handleEdit(e, () => console.log('callback edit'))} disabled={adding}>{!editabled ? 'Editar' : 'Guardar'}</button>
+              <button className="button button--edit" onClick={this.handleEdit} disabled={adding}>{!editabled ? 'Editar' : 'Guardar'}</button>
             </div>
           );
         }}
